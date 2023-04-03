@@ -9,7 +9,7 @@ def main():
     intellectual_skills_options = ["Analytic Inquiry", "Use of Information and Resources", 
                                   "Engaging Diverse Perspectives", "Ethical Reasoning", 
                                   "Quantitative Fluency", "Communication Fluency"]
-    intellectual_skills = st.selectbox("Intellectual Skills", intellectual_skills_options)
+    intellectual_skills = st.multiselect("Intellectual Skills", intellectual_skills_options)
 
     # Applied and Collaborative Learning Section
     st.header("Applied and Collaborative Learning")
