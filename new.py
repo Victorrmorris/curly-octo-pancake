@@ -1,22 +1,10 @@
 import streamlit as st
 
-# Define the list of intellectual skills categories
-intellectual_skills = [
-    "Analytic inquiry",
-    "Use of information resources",
-    "Engaging diverse perspectives",
-    "Ethical reasoning",
-    "Quantitative fluency",
-    "Communication fluency"
-]
+st.title("Analytic Inquiry")
 
-# Display a multiselect widget for users to choose the datapoints
-selected_skills = st.sidebar.multiselect(
-    "Select intellectual skills categories:",
-    intellectual_skills
-)
+topic = st.selectbox("Select a topic", ["Identify and frame a problem or question", "Distinguish among ideas concepts, theories or practical approaches to the problem"])
 
-# Display the selected datapoints
-st.write("You have selected the following intellectual skills categories:")
-for skill in selected_skills:
-    st.write("- " + skill)
+if topic == "Identify and frame a problem or question":
+    st.write("You have selected 'Identify and frame a problem or question' topic.")
+elif topic == "Distinguish among ideas concepts, theories or practical approaches to the problem":
+    st.write("You have selected 'Distinguish among ideas concepts, theories or practical approaches to the problem' topic.")
