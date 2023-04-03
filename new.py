@@ -4,7 +4,7 @@ def main():
     st.title("Transferable Skills and Applications Form")
 
     # Intellectual Skills Section
-    st.header("Intellectual Skills")
+    st.header("What degree-based skills do you have?")
     st.write("Please select your top transferable intellectual skills:")
     intellectual_skills_options = ["Analytic Inquiry", "Use of Information and Resources", 
                                   "Engaging Diverse Perspectives", "Ethical Reasoning", 
