@@ -1,36 +1,21 @@
 import streamlit as st
 
-def main():
-    st.title("Transferable Skills and Applications Form")
+st.title("Checkbox Example")
 
-    # Intellectual Skills Section
-    st.header("What degree-based skills do you have?")
-    st.write("Please select your top transferable intellectual skills:")
-    intellectual_skills_options = ["Analytic Inquiry", "Use of Information and Resources", 
-                                  "Engaging Diverse Perspectives", "Ethical Reasoning", 
-                                  "Quantitative Fluency", "Communication Fluency"]
-    intellectual_skills = st.multiselect("Intellectual Skills", intellectual_skills_options)
+# Create a dictionary to store the attribute labels and their default values
+attributes = {
+    "Analytic inquiry": False,
+    "Use of information resources": False,
+    "Engaging diverse perspectives": False,
+    "Ethical reasoning": False,
+    "Quantitative fluency": False,
+    "Communication fluency": False,
+}
 
-    # Applied and Collaborative Learning Section
-    st.header("Applied and Collaborative Learning")
-    st.write("Please describe any practical applications or examples of how you have used your intellectual skills in a collaborative or applied setting:")
-    applied_learning = st.text_area("Applied and Collaborative Learning")
+# Use a for loop to create a checkbox for each attribute
+for key in attributes:
+    attributes[key] = st.checkbox(key)
 
-    # Civic and Global Learning Section
-    st.header("Civic and Global Learning")
-    st.write("Please describe any experiences or examples of how you have applied your intellectual skills to civic or global issues:")
-    civic_learning = st.text_area("Civic and Global Learning")
-
-    # Submit Button
-    if st.button("Submit"):
-        # Store the responses in a dictionary
-        responses = {
-            "intellectual_skills": intellectual_skills,
-            "applied_learning": applied_learning,
-            "civic_learning": civic_learning
-        }
-        # Print the responses to the console
-        print(responses)
-
-if __name__ == "__main__":
-    main()
+# Print out the selected attributes
+selected_attributes = [key for key, value in attributes.items() if value]
+st.write("Selected attributes:", selected_attributes)
